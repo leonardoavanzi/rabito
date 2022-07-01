@@ -9,7 +9,9 @@ defmodule Rabbitmq.Application do
   def start(_type, _args) do
     children = [
       # Starts a worker by calling: Rabbitmq.Worker.start_link(arg)
-       {Rabbitmq.WorkerSendMessage, nil}
+       {Rabbitmq.WorkerSendMessage, nil},
+       {Rabbitmq.WorkerReceiveMessage, nil}
+
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
