@@ -27,7 +27,9 @@ defmodule Rabbitmq.WorkerSendMessage do
 
     AMQP.Exchange.declare(channel, "MARMECQMARIAMEC", :direct)
 
-    AMQP.Basic.publish(channel, "MARMECQMARIAMEC", "message", text)
+    AMQP.Basic.publish(channel, "MARMECQMARIAMEC", "xyz", text)
+
+    send_message(name)
     AMQP.Connection.close(pid)
 
 
